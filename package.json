@@ -1,0 +1,23 @@
+{
+  "name": "namaste_react",
+  "version": "1.0.0",
+  "description": "This is a namaste React by Vinit prajapati",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/creator2104/Namaste_React.git"
+  },
+  "keywords": [],
+  "author": "Vinit Prajapati",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/creator2104/Namaste_React/issues"
+  },
+  "homepage": "https://github.com/creator2104/Namaste_React#readme",
+  "devDependencies": {
+    "parcel": "^2.13.3"
+  }
+}
