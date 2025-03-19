@@ -23,7 +23,7 @@ const jsxheading = <h1 id="heading" className="head">Namaste react in JSX</h1>
 // React and JSX are both different
 // console.log(heading);
 //both heading and jsxheading are same object
-console.log(jsxheading);
+console.log(jsxheading)
 root.render(jsxheading)
 
 //React element
