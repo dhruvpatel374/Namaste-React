@@ -12,10 +12,12 @@
         <!-- the above one h1 would be replaced by render method in react -->
     </div>
 </body>
-<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+<!-- this cdn links are not preferred way to bring react to your project -->
+<!-- <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script> -->
+<!-- <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script> -->
 <!-- Below one link used for DOM manipulation in react -->
-<script src="/App.js">
+<script type="module" src="/App.js">
 
 //package.json file is configuration for npm
 // npm is a package manager , it manages all packages that will install in our system
@@ -27,5 +29,19 @@
 //npm install -D parcel
 //-D means dev dependecies
 //package-loc.json keep tracks the versions of all the dependecies
+//you don't need to push node modules to git u can regenerate it from package and package-lock.json with using command (npm install) 
+
+//npm used for installing a package and npx used for executing a package
 </script>
 </html>
+
+
+<!-- npm init to start creating package.json -->
+<!-- npm install -D parcel to install parcel  -->
+<!-- npm install used to install node modules -->
+<!-- npx parcel index.html  to start the server -->
+<!-- npm install react to install react-->
+<!-- npm i react-dom to install react-dom-->
+<!-- npm run start  -->
+<!-- npm start  -->
+<!-- npm run build  -->

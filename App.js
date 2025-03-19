@@ -1,3 +1,8 @@
+import React from "react";
+// "react" refers to node_modules packaage named react and same for react-dom
+import ReactDOM from "react-dom/client";
+
+// the below one React came from cdn links
 const heading = React.createElement(
 "h1",
 // create element belongs from react
