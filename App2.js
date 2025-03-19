@@ -23,22 +23,43 @@ const jsxheading = <h1 id="heading" className="head">Namaste react in JSX</h1>
 // React and JSX are both different
 // console.log(heading);
 //both heading and jsxheading are same object
-console.log(jsxheading)
-root.render(jsxheading)
+
+// console.log(jsxheading)
+
+// root.render(jsxheading)
 
 //React element
+const elem = <span>React element</span>
 const jsxheading2 = (<h1 id="heading" className="head">
+    {elem}
     Namaste react in JSX
     </h1>)
 //if u write like above in mutiple line then use () braces so babel can understand where jsx starting and ending
 
-
+// If a function returns a react element its known as react components 
 // React components
 // Class based components - old way
 // Functional componennts - new way
 
+const Title = () => (
+    <h1 className="heading">
+    Namaste react using JSX
+    </h1>
+)
 
+const number = 1000
 // React functional components - its a just js function which returns a piece code of jsx
-const Heading = () => {
-    return <h1>Namaste react functional components</h1>
-}
+const Heading = () => (
+    <div id="container">
+        {jsxheading2}
+        <Title />  
+        {
+         console.log("xyz")
+        }
+        {/* between two curly braces you can write */}
+        {/* above one known as component composition */}
+    <h1 className="heading">Namaste react functional components</h1>
+    </div>
+)
+const root = ReactDOM.createRoot(document.getElementById("root"))
+root.render(<Heading/>)
