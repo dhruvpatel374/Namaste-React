@@ -5,8 +5,10 @@
   "scripts": {
     "start": "parcel index.html",
     "start2": "parcel index2.html",
+    "start3": "parcel index3.html",
     "build":"parcel build index.html",
     "build2":"parcel build index2.html",
+    "build3":"parcel build index3.html",
     "test": "jest"
   },
   "repository": {
