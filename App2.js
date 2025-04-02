@@ -26,7 +26,7 @@ root.render(jsxheading)
 
 // Babel is a Js compiler
 
-// JSX is not HTML in JS 
+// JSX is not HTML in JS
 
 // JSX have HTML or XML likely syntax
 
@@ -44,7 +44,7 @@ const jsxheading2 = (<h1 id="heading" className="head">
     </h1>)
 //if u write like above jsx in mutiple lines then use () braces so babel can understand where jsx starting and ending
 
-// If a function returns a react element its known as react components 
+// If a function returns a react element its known as react components
 
 // React components
 // Class based components - old way

@@ -1,5 +1,5 @@
 import React from "react";
-// "react" refers to node_modules packaage named react and same for react-dom
+// "react" refers to node_modules package named react and same for react-dom
 import ReactDOM from "react-dom/client";
 
 // the below one React came from cdn links
@@ -36,7 +36,7 @@ root.render(heading);
 // const parent = React.createElement("div",{id:"parent"},
 //    [ 
 //      React.createElement("div",{id:"child"},
-//      [React.createElement("h1",{},"I'm an h1 tag"),React.creteElement("h2",{},"I'm an h2 tag") ])
+//      [React.createElement("h1",{},"I'm an h1 tag"),React.creteElement("h2",{},"I'm an h2 tag") ]),
 //      React.createElement("div",{id:"child"},
 //      [React.createElement("h1",{},"I'm an h1 tag"),React.creteElement("h2",{},"I'm an h2 tag") ])
 //    ])   

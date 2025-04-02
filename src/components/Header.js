@@ -14,6 +14,7 @@ export const Header = () => {
             <li>About us</li>
             <li>Contact us</li> 
             <li>Cart</li>
+            <button className="login-btn">Login</button>
          </ul>
         </div>
         </div>

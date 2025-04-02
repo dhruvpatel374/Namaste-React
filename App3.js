@@ -1809,11 +1809,12 @@ const Body = () => {
             resname = "KFC"
             cuisine = "Burger, Fast food"
             /> */}
-            {/* above mentioned thing known as props and props is just noraml arguements in function*/}
+            {/* above mentioned thing known as props and props is just normal arguements in function*/}
             {/* when you want to pass the data pass it with props */}
             {/* React will wrap all props in one obj and pass to the directed identity (Restaurantcard) */}
             {/* 
             <RestaunrantCard resData = {resList[0]}/>
+            /write in {} bcz its JSON data
             <RestaunrantCard resData = {resList[1]}/>
             <RestaunrantCard resData = {resList[2]}/>
             <RestaunrantCard resData = {resList[3]}/>
