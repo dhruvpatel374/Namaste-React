@@ -36,9 +36,15 @@
     border: 1px solid black;
     cursor: pointer;
 }
+
+.filter{
+    display: flex;
+    justify-content: space-between;
+}
+
 .filter-btn{
-    padding: 5px;
-    margin: 10px;
+    padding: 7px;
+    margin: 15px 0px 10px 0px;
     cursor: pointer;
 }
 
@@ -52,6 +58,7 @@ box-sizing: border-box;
 }
 
 .res-container{
+    margin: 15px;
     display: flex;
     flex-wrap: wrap;
 }
@@ -129,4 +136,14 @@ box-sizing: border-box;
     padding: 0px 30px;
     margin: 10px;
     cursor: pointer;
+}
+
+.search-box{
+    margin: 15px 10px 0px 0px;
+    padding: 7px;
+}
+
+.search-btn{
+    margin: 7px;
+    padding:7px;
 }

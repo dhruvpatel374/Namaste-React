@@ -83,11 +83,6 @@
 //react can efiiciently find out the difference between virtual doms and updates the ui
 // react is fast bcz it has virtual dom and diff algorithm which is very efficient , u can do efficient dom manipulation
 
-
-
-
-
-
 // App5
 import RestaunrantCard from "./Restaurantcard";
 import { useEffect, useState } from "react";
@@ -95,38 +90,72 @@ import Shimmer from "./Shimmer";
 
 const Body = () => {
   const [listofrestaurants, setlistofrestaurants] = useState([]);
+  const [filteredRestaurant,setfilteredRestaurant] = useState([]);
 
-  useEffect(() => {fetchdata()}, []);
+  const [searchText, setsearchText] = useState("");
+  useEffect(() => {
+    fetchdata();
+  }, []);
   // useeffect takes two arguements first is callback function and second arguement is dependency array
   // the callback func will be called after your component renders
 
-
-const fetchdata = async () =>{
-    const data =await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=23.2156354&lng=72.63694149999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
+  const fetchdata = async () => {
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=23.2156354&lng=72.63694149999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+    );
     // fetch returns a promise
     // fetch superpower is given by browser not js
     // fetch will fetch the data from the api
-    const json = await data.json()
+    const json = await data.json();
     console.log(json);
     // optional chaining
     // The ?. operator is like the . chaining operator, except that instead of causing an error if a reference is nullish (null or undefined), the expression short-circuits with a return value of undefined. When used with function calls, it returns undefined if the given function does not exist.
-    setlistofrestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-}
-//   console.log("body rendered");
+    setlistofrestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setfilteredRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+  };
+  // console.log("body rendered");
 
-// Conditional Rendering
-// if(listofrestaurants.length===0){
-//   return <Shimmer/>
-// }
+  // Conditional Rendering
+  // rendering on basis of condition is known as condition rendering
+  // if(listofrestaurants.length===0){
+  //   return <Shimmer/>
+  // }
 
-// used ternary below
-  return listofrestaurants.length===0 ? <Shimmer/> : (
+  // used ternary below
+  return listofrestaurants.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="body">
       <div className="filter">
+        <div className="search">
+          <input
+            type="text"
+            className="search-box"
+            placeholder="Do you want a coffee?"
+            value={searchText}
+            onChange={(e) => {
+              setsearchText(e.target.value);
+            }}
+          />
+          {/* here the value of searchtext could not be changed bcz the state variable is not changed and thats why we cant enter the text inside search box  */}
+          <button
+            className="search-btn"
+            onClick={() => {
+              console.log(searchText);
+              // Filter the restaurant cards and update the UI
+              const filteredRestaurant = listofrestaurants.filter((res) =>
+                res?.info?.name.toLowerCase().includes(searchText.toLowerCase())
+              );
+              setfilteredRestaurant(filteredRestaurant);
+            }}
+          >
+            search
+          </button>
+        </div>
         <button
           className="filter-btn"
           onClick={() => {
-            filteredList = listofrestaurants.filter(
+            const filteredList = listofrestaurants.filter(
               (res) => parseFloat(res.info.avgRatingString) > 4.3
             );
             setlistofrestaurants(filteredList);
@@ -136,7 +165,7 @@ const fetchdata = async () =>{
         </button>
       </div>
       <div className="res-container">
-        {listofrestaurants.map((restaurant) => (
+        {filteredRestaurant .map((restaurant) => (
           <RestaunrantCard key={restaurant.info.id} resData={restaurant} />
         ))}
       </div>
