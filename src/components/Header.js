@@ -1,13 +1,23 @@
 // made new component and their named files in components folder 
 
 import { LOGO_URL } from "../utils/constants";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 export const Header = () => {
 
   const [btnNameReact,setbtnNameReact] = useState("Login")
+  // never write usestate in if condition ,for loop or in functions
+  // never use useState outside your component , it doesn't make any sense
+  console.log("Header render");
   // we cant update a value in const but in react when we do with usestate it is creating new insatance for btnNameReact so no worries to use const 
 
+  useEffect(()=>{
+    console.log("useEffect called");
+  },[btnNameReact])
+  // everytime my component renders useEffect would be called 
+  // if no dependency array => useEffect is called on every render
+  // if dependecy array is empty = [] => useEffect is called on iniial render (just once) 
+  // if dependecy array is [btnNameReact] => useEffect is called everytime btnNameReact is updated 
     return (
         <div className="header">
         <div className="logo-container">

@@ -7,10 +7,10 @@
     "start2": "parcel index2.html",
     "start3": "parcel index3.html",
     "start4": "parcel index4.html",
-    "build":"parcel build index.html",
-    "build2":"parcel build index2.html",
-    "build3":"parcel build index3.html",
-    "build4":"parcel build index4.html",
+    "build": "parcel build index.html",
+    "build2": "parcel build index2.html",
+    "build3": "parcel build index3.html",
+    "build4": "parcel build index4.html",
     "test": "jest"
   },
   "repository": {
@@ -30,9 +30,11 @@
   },
   "dependencies": {
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-router": "^7.5.0",
+    "react-router-dom": "^7.5.0"
   },
-  "browserslist":[
+  "browserslist": [
     "last 2 versions"
   ]
 }

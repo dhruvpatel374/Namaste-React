@@ -83,6 +83,10 @@
 //react can efiiciently find out the difference between virtual doms and updates the ui
 // react is fast bcz it has virtual dom and diff algorithm which is very efficient , u can do efficient dom manipulation
 
+
+
+
+
 // App5
 import RestaunrantCard from "./Restaurantcard";
 import { useEffect, useState } from "react";
