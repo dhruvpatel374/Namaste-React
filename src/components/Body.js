@@ -83,18 +83,14 @@
 //react can efiiciently find out the difference between virtual doms and updates the ui
 // react is fast bcz it has virtual dom and diff algorithm which is very efficient , u can do efficient dom manipulation
 
-
-
-
-
 // App5
-import RestaunrantCard from "./Restaurantcard";
+import RestaunrantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 
 const Body = () => {
   const [listofrestaurants, setlistofrestaurants] = useState([]);
-  const [filteredRestaurant,setfilteredRestaurant] = useState([]);
+  const [filteredRestaurant, setfilteredRestaurant] = useState([]);
 
   const [searchText, setsearchText] = useState("");
   useEffect(() => {
@@ -114,8 +110,12 @@ const Body = () => {
     console.log(json);
     // optional chaining
     // The ?. operator is like the . chaining operator, except that instead of causing an error if a reference is nullish (null or undefined), the expression short-circuits with a return value of undefined. When used with function calls, it returns undefined if the given function does not exist.
-    setlistofrestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    setfilteredRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setlistofrestaurants(
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    setfilteredRestaurant(
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
   };
   // console.log("body rendered");
 
@@ -169,7 +169,7 @@ const Body = () => {
         </button>
       </div>
       <div className="res-container">
-        {filteredRestaurant .map((restaurant) => (
+        {filteredRestaurant.map((restaurant) => (
           <RestaunrantCard key={restaurant.info.id} resData={restaurant} />
         ))}
       </div>
