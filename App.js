@@ -46,3 +46,14 @@ root.render(heading);
 // console.log(parent);   // it gives an object at output
 // const root = ReactDOM.createRoot(document.getElementById("root"));
 // root.render(parent) 
+
+
+
+// "start": "parcel index.html",
+// "start2": "parcel index2.html",
+// "start3": "parcel index3.html",
+// "start4": "parcel index4.html",
+// "build": "parcel build index.html",
+// "build2": "parcel build index2.html",
+// "build3": "parcel build index3.html",
+// "build4": "parcel build index4.html",
